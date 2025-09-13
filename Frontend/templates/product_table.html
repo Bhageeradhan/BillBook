@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-4">
+    <!-- Add Product Button -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Product List</h3>
+        <a href="/inventory/forms/" class="btn btn-success">
+            + Add Product
+        </a>
+    </div>
+
+    <!-- Bootstrap Table -->
+    <div class="card shadow-sm rounded-4">
+        <div class="card-body">
+            <table class="table table-striped table-bordered text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Product Code</th>
+                        <th>Price</th>
+                        <th>Tax</th>
+                        <th>Picture</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                        <tr>
+                            <td>{{ product.product_name }}</td>
+                            <td>{{ product.product_code }}</td>
+                            <td>{{ product.price }}</td>
+                            <td>{{ product.tax }}</td>
+                            <td>
+                                {% if product.picture %}
+                                    <img src="{{product.picture.url}}" alt="img" width="50px">
+                                {% else %}
+                                     No picture
+                                {% endif %}
+
+                            </td>
+                            <td>
+                                <a href="{% url 'product_update' product.id %}" class="btn btn-warning btn-sm">
+                                    Update
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'product_delete' product.id %}" class="btn btn-danger btn-sm">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

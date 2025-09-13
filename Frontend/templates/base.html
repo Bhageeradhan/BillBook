@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <link rel="stylesheet" href="{% static 'css/text.css' %}">
+
+    <style>
+        table, th, td{
+            border: 2px solid grey;
+            padding: 10px;
+        }
+
+        .b1{
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .b2{
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .b3{
+            background-color: rgb(128, 0, 0);
+            color: white;
+            border: none;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .b4{
+            background-color: goldenrod;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+
+<body class="bg-dark text-white">
+    {% include 'navbar.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+    
+</body>
+
+</html>

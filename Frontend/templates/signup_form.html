@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    
+</head>
+
+<body>
+     <div class="container d-flex justify-content-center align-items-center vh-100">
+     <div class="card shadow-lg p-4 rounded-4" style="width: 350px;">
+      <h3 class="text-center mb-4">Signin Form</h3>
+
+      <form action="" method="POST">
+
+        {% csrf_token %}
+
+        <!-- Username -->
+        <div class="exampleInputEmail1">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" required>
+        </div>
+
+        <p class="text-danger fw-bold">{{error}}</p>
+
+        <!-- Password -->
+        <div class="exampleInputEmail1">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" required>
+        </div>
+
+        <!-- Fname -->
+        <div class="exampleInputEmail1">
+          <label for="firstname" class="form-label">Firstname</label>
+          <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter Firstname" required>
+        </div>
+
+        <!-- Lname -->
+        <div class="exampleInputEmail1">
+          <label for="lastname" class="form-label">Lastname</label>
+          <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter Lastname" required>
+        </div>
+
+        <!-- EmailAddress -->
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email Address</label>
+          <input type="email" class="form-control" name="emailaddress" id="emailaddress" placeholder="Ente Emailid" required>
+        </div>
+
+        <!-- age -->
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Age</label>
+          <input type="number" class="form-control" name="age" id="age" placeholder="Enter Age" required>
+        </div>
+
+        <!-- role -->
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Role</label>
+          <select name="role" class="form-control" id="role" required>
+            <option value="Admin">Admin</option>
+            <option value="1">Manager</option>
+            <option value="2">Employee</option>
+          </select>
+        </div>
+
+        <!-- Login Button -->
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</body>
+</html>

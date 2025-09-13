@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-4">
+
+    <!-- Centered & Reduced Width -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">   <!-- Adjust width here (col-md-4, col-md-6, etc.) -->
+            <!-- Card for Form -->
+            <div class="card shadow-sm rounded-4">
+                <div class="card-body bg-dark text-light">
+                    <h3 class="mb-4">Add Customer</h3>
+
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        
+                        <!-- Django Form -->
+                        {{ customers_form }}
+
+                        <br>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary">
+                            Add Customer
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Back Button aligned right -->
+            <div class="mt-4 text-end">
+                <a href="/ordermanagement/customertable/" class="btn btn-secondary b3">
+                    Back
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
